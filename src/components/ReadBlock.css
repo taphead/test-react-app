@@ -1,0 +1,11 @@
+button {
+  color: hsl(36, 100%, 99%);
+  padding: 6px;
+  background-color: hsl(240, 100%, 5%);
+  width: 150px;
+}
+
+p {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}

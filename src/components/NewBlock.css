@@ -1,0 +1,29 @@
+.newblockdiv {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  background-color: hsl(240, 100%, 5%);
+  padding: 20px;
+}
+
+p {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 50px;
+  color: goldenrod;
+}
+
+h3 {
+  color: hsl(36, 100%, 99%);
+}
+
+h3:hover {
+  color: goldenrod;
+  cursor: pointer;
+}

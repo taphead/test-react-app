@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.navbar span {
+  color: rgb(120, 120, 120);
+  margin: 12px;
+}
+.navbar span:hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+}
