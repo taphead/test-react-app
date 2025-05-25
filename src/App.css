@@ -1,4 +1,4 @@
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -54,4 +54,36 @@
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 4;
+} */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "banner banner newblock"
+    "boldtext readblock newblock"
+    "card1 card2 card3";
+}
+
+.banner {
+  grid-area: banner;
+}
+.newblock {
+  grid-area: newblock;
+}
+.boldtext {
+  grid-area: boldtext;
+}
+.readblock {
+  grid-area: readblock;
+}
+.card:nth-child(5) {
+  grid-area: card1;
+}
+.card:nth-child(6) {
+  grid-area: card2;
+}
+.card:nth-child(7) {
+  grid-area: card3;
 }

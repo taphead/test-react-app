@@ -1,8 +1,8 @@
 import "./Card.css";
 
-export default function Card({ img, num, head, text }) {
+export default function Card({ img, num, head, text, name }) {
   return (
-    <div class="container">
+    <div class="container" id={name}>
       <div>
         <img className="image" src={img} alt="some stuff idk" />
       </div>

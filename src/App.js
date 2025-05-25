@@ -14,30 +14,30 @@ function App() {
     <div className="App">
       <Navbar className="navbar"></Navbar>
       <div className="grid-container">
-        <Banner className="banner" />
-        <BoldTextBlock className="boldtext" />
-        <ReadBlock className="readblock" />
-        <NewBlock className="newblock"></NewBlock>
+        <Banner name="banner" />
+        <BoldTextBlock name="boldtext" />
+        <ReadBlock name="readblock" />
+        <NewBlock name="newblock"></NewBlock>
         <Card
           img={cardImg1}
           num="01"
           head="Reviving Retro PCs"
           text="What happens when old PCs are given modern upgrades?"
-          id="card1"
+          name="card1"
         ></Card>
         <Card
           img={cardImg2}
           num="02"
           head="Top laptops of 2022"
           text="Our best picks for various needs and budgets."
-          id="card2"
+          name="card2"
         ></Card>
         <Card
           img={cardImg3}
           num="03"
           head="The growth of gaming"
           text="How the pandemic has sparked fresh opportunities."
-          id="card3"
+          name="card3"
         ></Card>
       </div>
     </div>
