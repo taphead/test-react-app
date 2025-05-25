@@ -1,0 +1,9 @@
+h3 {
+  color: black;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+h1 {
+  color: hsl(5, 85%, 63%);
+}
