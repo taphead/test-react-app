@@ -24,6 +24,7 @@ function App() {
           head="Reviving Retro PCs"
           text="What happens when old PCs are given modern upgrades?"
           name="card1"
+          className="card1"
         ></Card>
         <Card
           img={cardImg2}
@@ -31,6 +32,7 @@ function App() {
           head="Top laptops of 2022"
           text="Our best picks for various needs and budgets."
           name="card2"
+          className="card2"
         ></Card>
         <Card
           img={cardImg3}
@@ -38,6 +40,7 @@ function App() {
           head="The growth of gaming"
           text="How the pandemic has sparked fresh opportunities."
           name="card3"
+          className="card3"
         ></Card>
       </div>
     </div>
