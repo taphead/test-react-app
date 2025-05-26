@@ -1,8 +1,17 @@
 button {
-  color: hsl(36, 100%, 99%);
+  color: black;
   padding: 6px;
+  font-size: large;
+  background-color: hsl(5, 85%, 63%);
+  width: 200px;
+  height: 40px;
+  border: none;
+}
+
+button:hover {
   background-color: hsl(240, 100%, 5%);
-  width: 150px;
+  cursor: pointer;
+  color: whitesmoke;
 }
 
 p {

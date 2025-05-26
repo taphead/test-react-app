@@ -1,9 +1,13 @@
-h3 {
+.cardh3 {
   color: black;
   font-weight: bolder;
   font-size: larger;
 }
 
-h1 {
+.cardh3:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+.cardh1 {
   color: hsl(5, 85%, 63%);
 }

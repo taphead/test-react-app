@@ -9,7 +9,7 @@ export default function ReadBlock({ name }) {
         fulfilling its promise?
         <br />
         <br />
-        <button>Read More</button>
+        <button className="readbutton">Read More</button>
       </p>
     </div>
   );

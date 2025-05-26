@@ -7,8 +7,8 @@ export default function Card({ img, num, head, text, name }) {
         <img className="image" src={img} alt="some stuff idk" />
       </div>
       <div className="textblock">
-        <h1>{num}</h1>
-        <h3>{head}</h3>
+        <h1 className="cardh1">{num}</h1>
+        <h3 className="cardh3">{head}</h3>
         <p>{text}</p>
       </div>
     </div>
