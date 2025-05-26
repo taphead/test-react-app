@@ -1,28 +1,53 @@
 import "./navbar.css";
 import logo from "../assets/logo.svg";
 import menu from "../assets/icon-menu.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <div className="navcontainer">
       <img src={logo} id="logo-image" alt="logo" />
       <div className="navbar">
-        <Link to="/" className="nav-item">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "active-link nav-item" : "nav-item"
+          }
+        >
           Home
-        </Link>
-        <Link to="/new" className="nav-item">
+        </NavLink>
+        <NavLink
+          to="/new"
+          className={({ isActive }) =>
+            isActive ? "active-link nav-item" : "nav-item"
+          }
+        >
           New
-        </Link>
-        <Link to="/popular" className="nav-item">
+        </NavLink>
+        <NavLink
+          to="/popular"
+          className={({ isActive }) =>
+            isActive ? "active-link nav-item" : "nav-item"
+          }
+        >
           Popular
-        </Link>
-        <Link to="/trending" className="nav-item">
+        </NavLink>
+        <NavLink
+          to="/trending"
+          className={({ isActive }) =>
+            isActive ? "active-link nav-item" : "nav-item"
+          }
+        >
           Trending
-        </Link>
-        <Link to="/categories" className="nav-item">
+        </NavLink>
+        <NavLink
+          to="/categories"
+          className={({ isActive }) =>
+            isActive ? "active-link nav-item" : "nav-item"
+          }
+        >
           Categories
-        </Link>
+        </NavLink>
       </div>
       <img src={menu} id="menu-image" alt="menu" />
     </div>

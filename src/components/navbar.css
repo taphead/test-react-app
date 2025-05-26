@@ -15,3 +15,7 @@
   cursor: pointer;
   color: hsl(35, 77%, 62%);
 }
+
+.active-link {
+  color: hsl(35, 77%, 62%);
+}
