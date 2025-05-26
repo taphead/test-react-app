@@ -77,6 +77,14 @@ form {
   margin-bottom: 10px;
 }
 
+.popularview {
+  margin: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: large;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .grid-container {
     display: flex;

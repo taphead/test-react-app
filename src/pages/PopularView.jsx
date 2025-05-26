@@ -1,6 +1,6 @@
 export default function PopularView() {
   return (
-    <p>
+    <p className="popularview">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus
       blandit tortor, sed vulputate tellus euismod nec. Suspendisse nibh risus,
       commodo at condimentum imperdiet, posuere at risus. Etiam orci tortor,
