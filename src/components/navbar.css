@@ -4,11 +4,12 @@
   margin: 20px;
 }
 
-.navbar span {
+.nav-item {
+  text-decoration: none;
   color: rgb(120, 120, 120);
   margin: 12px;
 }
-.navbar span:hover {
+.nav-item:hover {
   cursor: pointer;
   color: hsl(35, 77%, 62%);
 }

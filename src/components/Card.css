@@ -11,3 +11,14 @@
 .cardh1 {
   color: hsl(5, 85%, 63%);
 }
+
+.container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.image {
+  height: 75%;
+  object-fit: cover;
+}

@@ -33,3 +33,44 @@
 #card3 {
   grid-area: 3 / 3 / 4 / 4;
 }
+
+.formcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 75%;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.formcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.formcontainer {
+  padding: 2px 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+  .formcard {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .formcard {
+    width: 20%;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
