@@ -1,5 +1,6 @@
 import "./navbar.css";
 import logo from "../assets/logo.svg";
+import menu from "../assets/icon-menu.svg";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -23,6 +24,7 @@ export default function Navbar() {
           Categories
         </Link>
       </div>
+      <img src={menu} id="menu-image" alt="menu" />
     </div>
   );
 }

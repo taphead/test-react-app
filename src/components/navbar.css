@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   margin: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .nav-item {
@@ -12,4 +14,8 @@
 .nav-item:hover {
   cursor: pointer;
   color: hsl(35, 77%, 62%);
+}
+
+#menu-image {
+  display: none;
 }
