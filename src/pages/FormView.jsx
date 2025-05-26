@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 export default function FormView() {
   const [name, setName] = useState("");
@@ -35,13 +37,21 @@ export default function FormView() {
   function handleFormSubmit(event) {
     event.preventDefault();
     let newUser = {
+      id: userArray.length + 1,
       name: name,
       phone: phone,
       address: { city: city },
       website: website,
+      isLocal: true,
     };
     setUserArray((prevArray) => [...prevArray, newUser]);
     event.target.reset();
+  }
+
+  function handleCardDelete(id) {
+    let newUserArray = userArray.filter((user) => user.id !== id);
+    setUserArray(newUserArray);
+    setIsLoaded(true);
   }
 
   return (
@@ -100,6 +110,12 @@ export default function FormView() {
             <br />
             Website: {user.website}
             <br />
+            {"isLocal" in user && (
+              <div>
+                <FaEdit />
+                <MdDelete onClick={() => handleCardDelete(user.id)} />
+              </div>
+            )}
           </div>
         ))}
       </div>
