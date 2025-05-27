@@ -72,13 +72,15 @@ export default function FormView() {
       }
 
       setErrors(newErrors);
-      return;
     }
 
     if (!isValidPhone(phone)) {
-      newErrors.phone = "Please enter a valid 10-digit phone number";
-      setErrors(newErrors);
-      return;
+      if (phone.length === 0) {
+        newErrors.phone = "Please enter a value in the phone field";
+      } else {
+        newErrors.phone = "Please enter a valid 10-digit phone number";
+        setErrors(newErrors);
+      }
     }
 
     if (!isValidName(city)) {
@@ -89,16 +91,27 @@ export default function FormView() {
       }
 
       setErrors(newErrors);
-      return;
     }
 
     if (!isValidWebsite(website)) {
-      newErrors.website = "Please enter a valid URL";
-      setErrors(newErrors);
-      return;
+      if (website.length === 0) {
+        newErrors.website = "Please enter a value in the website field";
+      } else {
+        newErrors.website = "Please enter a valid URL";
+        setErrors(newErrors);
+      }
     }
 
-    setErrors({});
+    if (
+      isValidName(name) &&
+      isValidName(city) &&
+      isValidPhone(phone) &&
+      isValidWebsite(website)
+    ) {
+      setErrors({});
+    } else {
+      return;
+    }
 
     let newUser = {
       id: userArray.length + 1,
@@ -113,7 +126,7 @@ export default function FormView() {
     setCity("");
     setPhone("");
     setWebSite("");
-    toast("Card Submitted!");
+    toast("Card Submitted");
     event.target.reset();
   }
 
@@ -129,7 +142,7 @@ export default function FormView() {
     let newUserArray = userArray.filter((user) => user.id !== id);
     setUserArray(newUserArray);
     setIsLoaded(true);
-    toast("Card Deleted!");
+    toast("Card Deleted");
   }
 
   function handleUpdate(user) {
@@ -194,6 +207,7 @@ export default function FormView() {
           id="city"
           name="city"
           value={city}
+          className={errors.city ? "input-error" : ""}
           onChange={(e) => setCity(e.target.value)}
         />
         <br />
