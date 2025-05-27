@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function FormView() {
   const [name, setName] = useState("");
@@ -9,6 +10,7 @@ export default function FormView() {
   const [website, setWebSite] = useState("");
   const [userArray, setUserArray] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [editId, setEditId] = useState();
 
   useEffect(() => {
     const storedUsers = localStorage.getItem("userList");
@@ -45,13 +47,40 @@ export default function FormView() {
       isLocal: true,
     };
     setUserArray((prevArray) => [...prevArray, newUser]);
+    setName("");
+    setCity("");
+    setPhone("");
+    setWebSite("");
+    toast("Card Submitted!");
     event.target.reset();
+  }
+
+  function handleCardEdit(user) {
+    setName(user.name);
+    setPhone(user.phone);
+    setCity(user.address.city);
+    setWebSite(user.website);
+    setEditId(user);
   }
 
   function handleCardDelete(id) {
     let newUserArray = userArray.filter((user) => user.id !== id);
     setUserArray(newUserArray);
     setIsLoaded(true);
+    toast("Deleted Card!");
+  }
+
+  function handleUpdate(user) {
+    user.name = name;
+    user.phone = phone;
+    user.address.city = city;
+    user.website = website;
+    setEditId(null);
+    setName("");
+    setPhone("");
+    setCity("");
+    setWebSite("");
+    toast("Card Edited");
   }
 
   return (
@@ -63,6 +92,7 @@ export default function FormView() {
           id="name"
           name="name"
           required
+          value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <br />
@@ -74,6 +104,7 @@ export default function FormView() {
           pattern="^[0-9\-]+$"
           placeholder="123-456-7890"
           required
+          value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
         <br />
@@ -83,6 +114,7 @@ export default function FormView() {
           id="city"
           name="city"
           required
+          value={city}
           onChange={(e) => setCity(e.target.value)}
         />
         <br />
@@ -93,9 +125,17 @@ export default function FormView() {
           name="website"
           placeholder="https://example.com"
           required
+          value={website}
           onChange={(e) => setWebSite(e.target.value)}
         />
         <br />
+        {editId && (
+          <input
+            type="submit"
+            value="Update"
+            onClick={() => handleUpdate(editId)}
+          />
+        )}
         <input type="submit" value="Submit" />
       </form>
 
@@ -112,13 +152,14 @@ export default function FormView() {
             <br />
             {"isLocal" in user && (
               <div>
-                <FaEdit />
+                <FaEdit onClick={() => handleCardEdit(user)} />
                 <MdDelete onClick={() => handleCardDelete(user.id)} />
               </div>
             )}
           </div>
         ))}
       </div>
+      <ToastContainer />
     </>
   );
 }
