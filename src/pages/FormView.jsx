@@ -67,7 +67,7 @@ export default function FormView() {
     let newUserArray = userArray.filter((user) => user.id !== id);
     setUserArray(newUserArray);
     setIsLoaded(true);
-    toast("Deleted Card!");
+    toast("Card Deleted!");
   }
 
   function handleUpdate(user) {
@@ -80,6 +80,23 @@ export default function FormView() {
     setPhone("");
     setCity("");
     setWebSite("");
+    let newUserArray = userArray.map((u) => {
+      if (u.id === user.id) {
+        return {
+          ...u,
+          name: user.name,
+          phone: user.phone,
+          address: {
+            ...u.address,
+            city: user.address.city,
+          },
+          website: user.website,
+        };
+      }
+      return u;
+    });
+    setUserArray(newUserArray);
+    setIsLoaded(true);
     toast("Card Edited");
   }
 
