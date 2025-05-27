@@ -75,6 +75,12 @@ export default function FormView() {
       return;
     }
 
+    if (!isValidPhone(phone)) {
+      newErrors.phone = "Please enter a valid 10-digit phone number";
+      setErrors(newErrors);
+      return;
+    }
+
     if (!isValidName(city)) {
       if (city.length === 0) {
         newErrors.city = "Please enter a value in the ciy field";
@@ -86,11 +92,6 @@ export default function FormView() {
       return;
     }
 
-    if (!isValidPhone(phone)) {
-      newErrors.phone = "Please enter a valid 10-digit phone number";
-      setErrors(newErrors);
-      return;
-    }
     if (!isValidWebsite(website)) {
       newErrors.website = "Please enter a valid URL";
       setErrors(newErrors);
